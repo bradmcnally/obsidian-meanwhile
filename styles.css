@@ -1,0 +1,128 @@
+.pc-root{padding:20px 24px;overflow-y:auto;height:100%;box-sizing:border-box}.pc-header,.pc-detail-head,.pc-card-top,.pc-actions,.pc-modal-actions{display:flex;align-items:center;gap:12px;justify-content:space-between;flex-wrap:wrap}.pc-header{margin-bottom:24px}.pc-header h2,.pc-detail-head h2{margin:0}.pc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}.pc-card{border:1px solid var(--background-modifier-border);border-radius:12px;padding:18px;cursor:pointer;background:var(--background-primary);min-height:165px;transition:border-color .15s,background .15s}.pc-card:hover,.pc-card:focus-visible{border-color:var(--interactive-accent);background:var(--background-secondary)}.pc-card h3{margin:0;font-size:1.05em}.pc-card p{margin:10px 0}.pc-muted{font-size:.83em;color:var(--text-muted)}.pc-state{font-size:.72em;padding:3px 8px;border-radius:20px;background:var(--background-secondary);color:var(--text-muted);text-transform:capitalize}.pc-excerpt{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.pc-eyebrow{font-size:.7em;letter-spacing:.07em;font-weight:650;color:var(--text-muted);text-transform:uppercase;margin-top:14px}.pc-next{font-size:.9em}.pc-back{margin-bottom:18px}.pc-detail-head{justify-content:flex-start;margin-bottom:16px}.pc-actions{justify-content:flex-start;margin-bottom:20px}.pc-latest{border:1px solid var(--background-modifier-border);border-radius:12px;padding:18px;max-width:740px}.pc-section{margin:18px 0;white-space:pre-wrap}.pc-section p{margin:8px 0;line-height:1.55}.pc-highlight{padding:12px;background:var(--background-secondary);border-radius:8px}.pc-history-title{margin-top:30px}.pc-history-item{border-bottom:1px solid var(--background-modifier-border);padding:14px 0;display:flex;flex-direction:column;align-items:flex-start;gap:8px;max-width:740px}.pc-history-item button{align-self:flex-end}.pc-button-icon{display:inline-flex;vertical-align:middle;margin-right:6px}.pc-button-icon svg{width:15px;height:15px}.pc-field{display:flex;flex-direction:column;gap:7px;margin:14px 0}.pc-field label{font-weight:600}.pc-field textarea{width:100%;resize:vertical}.pc-more{margin-top:12px}.pc-modal-actions{justify-content:flex-end;margin-top:20px}.pc-empty{border:1px dashed var(--background-modifier-border);border-radius:12px;padding:35px;text-align:center}.pc-empty button{margin-top:10px}@media(max-width:520px){.pc-root{padding:14px}.pc-grid{grid-template-columns:1fr}}
+
+.pc-state-setting{display:flex;align-items:center;gap:10px;margin:0 0 18px;color:var(--text-muted);font-size:.85em}.pc-state-setting select{max-width:180px}.pc-reference-link{display:inline;padding:0 3px;margin:0 2px;border:0;box-shadow:none;background:transparent;color:var(--text-accent);text-decoration:underline;cursor:pointer}.pc-reference-link:hover{color:var(--text-accent-hover)}
+
+/* Mobile and narrow-pane layout */
+.pc-root{width:100%;min-width:0;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+.pc-card{min-width:0;overflow-wrap:anywhere}
+.pc-actions button,.pc-header button,.pc-modal-actions button{min-height:36px}
+.pc-field textarea{max-width:100%;font-size:16px;line-height:1.45}
+@media(max-width:600px){
+ .pc-root{padding:12px 14px 28px}
+ .pc-header{align-items:flex-start;margin-bottom:16px}
+ .pc-header h2{font-size:1.35em}
+ .pc-grid{grid-template-columns:minmax(0,1fr);gap:10px}
+ .pc-card{min-height:0;padding:14px}
+ .pc-actions{align-items:stretch;gap:8px}
+ .pc-actions button{flex:1 1 auto;min-height:44px}
+ .pc-latest{padding:14px;max-width:100%}
+ .pc-history-item button{min-height:40px}
+ .pc-state-setting{flex-wrap:wrap}
+ .pc-modal-actions button{min-height:44px}
+}
+@media(hover:none){.pc-card{transition:none}.pc-card:active{background:var(--background-secondary)}}
+
+/* Project accents are decorative; text remains controlled by the theme. */
+.pc-card{border-inline-start:4px solid var(--pc-project-accent,var(--interactive-accent,#7c6ae6))}
+.pc-card:focus-visible{outline:2px solid var(--text-normal,#555);outline-offset:2px}
+.pc-highlight{border-inline-start:4px solid var(--pc-project-accent,var(--interactive-accent,#7c6ae6));background:var(--background-secondary,#eee);color:var(--text-normal,#222)}
+@supports (background: color-mix(in srgb, red 10%, white)){
+ .pc-highlight{background:color-mix(in srgb,var(--pc-project-accent,var(--interactive-accent,#7c6ae6)) 10%,var(--background-primary,#fff))}
+}
+.pc-color-setting{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 18px}.pc-color-setting label{display:flex;align-items:center;gap:10px}.pc-color-setting input[type=color]{width:44px;height:44px;padding:3px;cursor:pointer}.pc-color-setting button{min-height:44px}
+
+/* Project detail: a clear focus on the latest checkpoint. */
+.pc-detail{max-width:780px;margin:0 auto;padding-bottom:32px}.pc-detail .pc-back{margin:0 0 24px}.pc-detail-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}.pc-detail .pc-detail-head{margin:0 0 6px;gap:10px}.pc-detail .pc-detail-head h2{font-size:1.65em;line-height:1.2}.pc-detail-subtitle{font-size:.85em;color:var(--text-muted)}.pc-detail-heading .pc-actions{margin:0}.pc-project-options{margin:0 0 28px;border-bottom:1px solid var(--background-modifier-border)}.pc-project-options summary{cursor:pointer;color:var(--text-muted);font-size:.85em;padding:10px 0}.pc-project-options summary:focus-visible{outline:2px solid var(--interactive-accent);outline-offset:3px}.pc-project-options-body{padding:12px 0 18px}.pc-detail .pc-latest,.pc-detail-empty{max-width:none;padding:22px;border:1px solid var(--background-modifier-border);border-radius:12px;background:var(--background-primary)}.pc-latest-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-bottom:14px;border-bottom:1px solid var(--background-modifier-border)}.pc-latest-heading h3,.pc-history-heading h3,.pc-detail-empty h3{margin:0 0 4px;font-size:1.05em}.pc-latest .pc-section{margin:20px 0 0}.pc-latest .pc-eyebrow{margin-top:0}.pc-latest .pc-highlight{padding:14px}.pc-history-section{margin-top:32px}.pc-history-heading{display:flex;align-items:center;gap:10px}.pc-history-heading h3{margin:0}.pc-history-count{font-size:.75em;color:var(--text-muted);background:var(--background-secondary);border-radius:12px;padding:2px 8px}.pc-detail .pc-history-item{max-width:none;display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:16px;padding:16px 0}.pc-history-content{min-width:0}.pc-history-date{font-size:.8em;font-weight:600;color:var(--text-muted);margin-bottom:5px}.pc-history-excerpt{overflow-wrap:anywhere;color:var(--text-normal)}.pc-detail .pc-history-item button{flex-shrink:0;align-self:center}.pc-detail-empty p{color:var(--text-muted);margin-bottom:0}
+@media(max-width:600px){.pc-detail-heading .pc-actions{width:100%}.pc-detail-heading .pc-actions button{width:100%}.pc-detail .pc-latest,.pc-detail-empty{padding:16px}.pc-latest-heading button,.pc-detail .pc-history-item button{min-height:44px}.pc-detail .pc-history-item{gap:10px}}
+
+.pc-header-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+@media(max-width:600px){.pc-header-actions button{min-height:44px}}
+
+.pc-shelf-group{margin:0 0 30px}.pc-shelf-group-heading{display:flex;align-items:center;gap:10px;margin:0 0 12px}.pc-shelf-group-heading h3{margin:0;font-size:1em}
+
+/* Tint the Next Step description while retaining the theme's text contrast. */
+.pc-highlight p{color:var(--text-normal,#222)}
+@supports (color: color-mix(in srgb, red, black)){
+ .pc-highlight p{color:color-mix(in srgb,var(--pc-project-accent,var(--interactive-accent,#7c6ae6)) 55%,var(--text-normal,#222))}
+}
+
+/* Match shelf-card next steps to the project detail. */
+.pc-next{color:var(--text-normal,#222)}
+@supports (color: color-mix(in srgb, red, black)){
+ .pc-next{color:color-mix(in srgb,var(--pc-project-accent,var(--interactive-accent,#7c6ae6)) 55%,var(--text-normal,#222))}
+}
+
+.pc-color-choices{margin:0 0 20px}.pc-color-label{font-weight:600;margin-bottom:10px}.pc-color-swatches{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.pc-color-swatches button{min-height:38px}.pc-color-swatch{width:38px;height:38px;padding:0;border-radius:50%;background:var(--pc-swatch-color);border:3px solid var(--background-primary);box-shadow:0 0 0 1px var(--background-modifier-border)}.pc-color-swatch:hover{background:var(--pc-swatch-color);box-shadow:0 0 0 2px var(--text-muted)}.pc-color-swatch[aria-pressed=true]{box-shadow:0 0 0 3px var(--text-normal)}.pc-color-swatch:focus-visible,.pc-theme-choice:focus-visible{outline:2px solid var(--text-normal);outline-offset:3px}.pc-theme-choice[aria-pressed=true]{box-shadow:inset 0 0 0 2px var(--text-normal)}.pc-custom-color{display:flex;align-items:center;gap:10px;margin-top:12px}.pc-custom-color label{display:flex;align-items:center;gap:10px}.pc-custom-color input{height:44px;width:44px;padding:3px}.pc-color-swatch:active{background:var(--pc-swatch-color)}
+
+/* Override theme button fills so every preset remains visible. */
+.pc-color-swatches button.pc-color-swatch,.pc-color-swatches button.pc-color-swatch:hover,.pc-color-swatches button.pc-color-swatch:active{background-color:var(--pc-swatch-color)!important;background-image:none!important}
+
+.pc-custom-color input[type=color]{border-radius:50%;border:3px solid var(--background-primary);box-shadow:0 0 0 1px var(--background-modifier-border)}
+.pc-custom-color.is-selected input[type=color]{box-shadow:0 0 0 3px var(--text-normal)}
+.pc-custom-color input[type=color]:focus-visible{outline:2px solid var(--text-normal);outline-offset:4px}
+
+.pc-custom-swatch{display:inline-flex;width:38px;height:38px;border:3px solid var(--background-primary);border-radius:50%;box-shadow:0 0 0 1px var(--background-modifier-border);overflow:hidden;cursor:pointer}.pc-custom-swatch.is-selected{box-shadow:0 0 0 3px var(--text-normal)}.pc-custom-swatch:focus-within{outline:2px solid var(--text-normal);outline-offset:3px}.pc-custom-swatch input[type=color]{display:block;width:100%;height:100%;padding:0;border:0;border-radius:50%;background:transparent;cursor:pointer}.pc-custom-swatch input[type=color]::-webkit-color-swatch-wrapper{padding:0}.pc-custom-swatch input[type=color]::-webkit-color-swatch{border:0;border-radius:50%}
+
+.pc-card-top{align-items:baseline}.pc-card-date{font-size:.8em;color:var(--text-muted);white-space:nowrap}
+
+/* Rainbow invites a custom selection; the native input reveals the chosen color. */
+.pc-custom-swatch{background:radial-gradient(circle at center, #fff 0%, transparent 65%),conic-gradient(#f45b69,#ffad47,#f5dc4d,#52c878,#4bcbd0,#5789ee,#a768dc,#ed70b1,#f45b69)}
+.pc-custom-swatch:not(.is-selected):not(.has-preview) input[type=color]{opacity:0}
+
+.pc-custom-swatch,.pc-color-swatches button.pc-color-swatch{box-sizing:border-box;width:38px;height:38px;min-width:38px;min-height:38px;flex:0 0 38px;border-radius:50%}
+.pc-custom-swatch input[type=color]{appearance:none;-webkit-appearance:none;min-width:0;min-height:0;box-sizing:border-box}
+
+.pc-state-setting{display:flex;align-items:flex-start;flex-direction:column;gap:8px;color:var(--text-normal);font-size:1em}.pc-setting-label{font-weight:600}.pc-state-segments{display:inline-flex;max-width:100%;border:1px solid var(--background-modifier-border);border-radius:var(--radius-m,8px);overflow:hidden}.pc-state-segments button{min-height:38px;padding:8px 12px;border:0;border-radius:0;box-shadow:none;background:var(--background-secondary);color:var(--text-normal)}.pc-state-segments button+button{border-inline-start:1px solid var(--background-modifier-border)}.pc-state-segments button[aria-pressed=true]{background:var(--interactive-accent);color:var(--text-on-accent,#fff);font-weight:600}.pc-state-segments button:focus-visible{outline:2px solid var(--text-normal);outline-offset:-3px;position:relative;z-index:1}@media(max-width:600px){.pc-state-segments button{min-height:44px}}
+
+/* Custom color uses the same button and theme shape as every other swatch. */
+.pc-custom-swatch-wrap{position:relative;display:inline-flex}.pc-custom-color-input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}.pc-color-swatches button.pc-custom-color-button:not(.has-custom-color){background-image:radial-gradient(circle at center,#fff 0%,transparent 65%),conic-gradient(#f45b69,#ffad47,#f5dc4d,#52c878,#4bcbd0,#5789ee,#a768dc,#ed70b1,#f45b69)!important}.pc-color-swatches button.pc-custom-color-button.has-custom-color{background-image:none!important}
+
+/* Match the thing color and choose contrasting button text. */
+.pc-detail button.pc-save-checkpoint{background:var(--pc-project-accent,var(--interactive-accent));color:var(--pc-button-text,var(--text-on-accent,#fff))}
+.pc-detail button.pc-save-checkpoint:hover{background:var(--pc-project-accent,var(--interactive-accent-hover,var(--interactive-accent)));filter:brightness(.9)}
+
+.pc-detail .pc-project-options{margin:32px 0 0;border-top:1px solid var(--background-modifier-border);border-bottom:0}
+
+.pc-checkpoint-openable{cursor:pointer}.pc-checkpoint-openable:focus-visible{outline:2px solid var(--interactive-accent);outline-offset:3px}.pc-history-item.pc-checkpoint-openable:hover{background:var(--background-secondary)}
+
+.pc-latest.pc-checkpoint-openable:hover{border-color:var(--interactive-accent);background:var(--background-primary)}
+@media(hover:none){.pc-latest.pc-checkpoint-openable:hover{border-color:var(--background-modifier-border);background:var(--background-primary)}}
+
+.pc-detail .pc-thing-title{font:inherit;line-height:inherit;text-align:left;color:var(--text-normal);background:transparent;border:0;box-shadow:none;padding:0;height:auto;cursor:pointer}.pc-detail .pc-thing-title:hover{color:var(--text-accent);background:transparent;text-decoration:underline}.pc-detail .pc-thing-title:focus-visible{outline:2px solid var(--interactive-accent);outline-offset:4px}
+
+.pc-settings-icon .pc-button-icon{margin:0}.pc-settings-icon{display:inline-flex;align-items:center;justify-content:center;min-width:36px}
+
+/* Keep the shelf title aligned with its actions at every pane width. */
+.pc-header{align-items:center}.pc-header h2{line-height:1.2}.pc-header-actions{align-items:center}
+@media(max-width:600px){.pc-header{align-items:center}}
+
+/* Keep each Next Step label visually connected to its text. */
+.pc-card .pc-eyebrow + .pc-next{margin-top:4px}.pc-highlight .pc-eyebrow + p{margin-top:4px}
+
+.pc-card .pc-next{font-size:1em}
+
+.pc-header button.pc-settings-icon{width:40px;height:40px;min-width:40px;min-height:40px;padding:0;border-radius:50%}
+@media(max-width:600px){.pc-header button.pc-settings-icon{width:44px;height:44px;min-width:44px;min-height:44px}}
+
+.pc-root.pc-hide-card-accent .pc-card{border-inline-start:1px solid var(--background-modifier-border)}
+.pc-root.pc-hide-card-accent .pc-card:hover,.pc-root.pc-hide-card-accent .pc-card:focus-visible{border-inline-start-color:var(--interactive-accent)}
+
+/* Give checkpoint history rows room around their contents and hover state. */
+.pc-detail .pc-history-item{padding:18px 16px;border-radius:var(--radius-m,8px)}
+
+/* History rows use spacing and a contained hover surface instead of dividers. */
+.pc-detail .pc-history{display:flex;flex-direction:column;gap:4px;margin-inline:-16px}
+.pc-detail .pc-history-item{border:0;margin:0}
+.pc-detail .pc-history-item.pc-checkpoint-openable:hover{background:var(--background-modifier-hover,var(--background-secondary))}
+@media(hover:none){.pc-detail .pc-history-item.pc-checkpoint-openable:hover{background:transparent}}
+
+/* 19px matches the radius of the 38px color swatches. */
+.pc-header-actions button.pc-add-thing{border-radius:19px}
+
+/* Subtly darken action buttons on hover. */
+@media (hover: hover){
+ .pc-root button:not(.pc-color-swatch):not(.pc-thing-title):not(.pc-reference-link):not(:disabled):hover,
+ .pc-modal-actions button:not(:disabled):hover{
+  filter:brightness(0.88);
+ }
+}
