@@ -32,3 +32,7 @@ Each thing’s metadata is stored in a Markdown note named for the thing, such a
 - Keep checkpoint headings as `## Context`, `## Next step`, `## Open questions`, and `## References` for the plugin to read them.
 - Wiki links in References are clickable in the detail view. Other Markdown links remain available in the checkpoint note.
 - Mobile layouts are included, but the plugin has not yet been tested on an iOS or Android device.
+
+## License
+
+Meanwhile is licensed under the [MIT License](LICENSE). Interface icons use Obsidian's built-in Lucide icons.

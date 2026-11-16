@@ -155,8 +155,21 @@
 .pc-card-indicator{display:inline-flex;align-items:center;justify-content:center}
 .pc-card-indicator svg{width:16px;height:16px}
 
-/* Give reference link text room at each end. */
-.pc-reference-link{padding-inline:12px}
+/* Keep long reference names inside the checkpoint on narrow screens. */
+.pc-reference-link{
+ display:inline-block;
+ box-sizing:border-box;
+ max-width:100%;
+ height:auto;
+ min-height:0;
+ padding:6px 12px;
+ line-height:1.55;
+ white-space:normal;
+ overflow-wrap:anywhere;
+ word-break:break-word;
+ text-align:left;
+ vertical-align:baseline;
+}
 
 /* Keep rendered next-step lists compact on thing cards. */
 .pc-card .pc-next > :first-child{margin-top:0}
