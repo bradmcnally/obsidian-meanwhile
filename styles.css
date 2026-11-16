@@ -126,3 +126,34 @@
   filter:brightness(0.88);
  }
 }
+
+/* Round action buttons and keep all color swatches circular. */
+.pc-root button,
+.pc-modal-actions button,
+.pc-header-actions button.pc-add-thing,
+.pc-header button.pc-settings-icon,
+.pc-state-segments button,
+.pc-color-swatches button.pc-color-swatch {
+ border-radius:9999px !important;
+ corner-shape:round !important;
+}
+
+/* Give each state its own rounded shape within the segmented control. */
+.pc-state-segments {
+ gap:3px;
+ padding:3px;
+ border-radius:9999px;
+ corner-shape:round;
+}
+.pc-state-segments button + button {border-inline-start:0}
+
+/* Let the thing title and next step lead the card hierarchy. */
+.pc-card .pc-excerpt {color:var(--text-muted)}
+
+/* Non-interactive indicators for additional checkpoint context. */
+.pc-card-indicators{display:flex;align-items:center;gap:10px;margin-top:14px;color:var(--text-muted)}
+.pc-card-indicator{display:inline-flex;align-items:center;justify-content:center}
+.pc-card-indicator svg{width:16px;height:16px}
+
+/* Give reference link text room at each end. */
+.pc-reference-link{padding-inline:12px}
