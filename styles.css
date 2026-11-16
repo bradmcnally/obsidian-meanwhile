@@ -157,3 +157,43 @@
 
 /* Give reference link text room at each end. */
 .pc-reference-link{padding-inline:12px}
+
+/* Keep rendered next-step lists compact on thing cards. */
+.pc-card .pc-next > :first-child{margin-top:0}
+.pc-card .pc-next > :last-child{margin-bottom:0}
+.pc-card .pc-next.markdown-rendered ul,
+.pc-card .pc-next.markdown-rendered ol{
+ margin-inline-start:0;
+ padding-inline-start:0;
+ list-style-position:inside;
+}
+.pc-card .pc-next.markdown-rendered li{
+ margin-inline-start:0;
+ padding-inline-start:1.3em;
+ text-indent:-1.3em;
+}
+.pc-card .pc-next.markdown-rendered li li{margin-inline-start:1em}
+.pc-card .pc-next.markdown-rendered .list-bullet{
+ float:none;
+ margin-inline-start:0;
+ width:1.3em;
+ text-indent:0;
+ vertical-align:baseline;
+ color:inherit;
+}
+/* Draw unordered markers ourselves so desktop and iOS use the same dash. */
+.pc-card .pc-next.markdown-rendered ul{list-style-type:none}
+.pc-card .pc-next.markdown-rendered ul>li:not(.task-list-item){
+ position:relative;
+ padding-inline-start:1.3em;
+ text-indent:0;
+ list-style-type:none;
+}
+.pc-card .pc-next.markdown-rendered ul>li:not(.task-list-item)>.list-bullet{display:none}
+.pc-card .pc-next.markdown-rendered ul>li:not(.task-list-item)::before{
+ content:'-';
+ position:absolute;
+ left:0;
+ inset-inline-start:0;
+ color:inherit;
+}
