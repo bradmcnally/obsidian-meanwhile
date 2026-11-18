@@ -1,38 +1,44 @@
 # Meanwhile
 
-**Meanwhile** is a lightweight Obsidian plugin for keeping context across your projects, hobbies, ideas, and goals. Save a brief checkpoint about where you left off, what might come next, and any links you want to keep handy.
+Meanwhile is a lightweight Obsidian plugin for keeping context across your projects, hobbies, ideas, and goals. Save a brief checkpoint about where you left off, what you might do next, and any useful links or notes.
 
-When you switch between things, Meanwhile helps you find your place again.
+When you come back to something, Meanwhile helps you pick up where you left off.
+
+Not everything needs a finish line. Some things are ongoing interests, others are projects to complete or ideas to explore. Checkpoints are a quick way to capture what was on your mind so it's easier to return to later.
 
 ## How it works
 
-- **Add a thing:** Give your project, hobby, idea, or goal a name. Choose a folder, or let Meanwhile create one under `Things/` by default.
-- **Save a checkpoint:** Capture where you left off and what might come next. Add questions or links if they’re useful.
-- **Come back to it:** Open Meanwhile to see where you left off and what’s next for each thing. Choose a thing for the full latest checkpoint and previous checkpoints. Select a checkpoint to open its note, or select the thing’s name to open its own note.
-- **Set a state and color:** Mark a thing Active, Resting, or Archived, and give it a color. Archived things are hidden by default.
-- **Make it yours:** Sort things by latest checkpoint or name, and choose whether to show resting and archived things and the colored card borders.
+1. **Add a thing.** Open Meanwhile using the feather icon or the **Open Meanwhile** command, then select **Add a thing**. Give it a name, like “Family history” or “Making music.”
+2. **Save a checkpoint.** Open the thing and select **New checkpoint**. Jot down where you left off. You can also add something for **Next time**, plus questions or links you want to keep handy.
+3. **Return when you’re ready.** Open Meanwhile to see your latest checkpoint for each thing. Select a thing to see the full checkpoint and its history. You can also open the underlying notes by selecting the thing’s title or a checkpoint.
+
+Give each thing a color and mark it **Active**, **Resting**, or **Archived**. In Meanwhile’s settings, you can choose which groups to show, how to sort your things, and whether cards have colored borders. Archived things are hidden by default.
 
 ## Install or upgrade
 
-Meanwhile stores its plugin files in the `meanwhile` folder.
+To install Meanwhile from a ZIP package:
 
-1. Unzip the package.
-2. Copy `main.js`, `manifest.json`, and `styles.css` from `meanwhile/` into `<your vault>/.obsidian/plugins/meanwhile/`, replacing the existing files when upgrading.
-3. Enable **Meanwhile** in **Settings → Community plugins**. If upgrading, restart Obsidian or disable and re-enable the plugin.
-4. Use the feather ribbon icon or the **Open Meanwhile** command to open your things.
+1. Unzip the package and find `main.js`, `manifest.json`, and `styles.css`.
+2. In your vault’s `.obsidian/plugins` folder, create a folder named `meanwhile` and copy the three files into it. The `.obsidian` folder may be hidden by your file manager.
+3. In Obsidian, open **Settings → Community plugins**, turn off Restricted mode if needed, and enable **Meanwhile**.
+4. Select the feather icon in the ribbon or run the **Open Meanwhile** command.
 
-Your existing notes and checkpoints remain in your vault. Install and enable the plugin separately on each device; use Obsidian Sync or another compatible service if you want to sync your notes.
+To upgrade, replace the three files in the `meanwhile` plugin folder with the new versions, then restart Obsidian or disable and re-enable Meanwhile. Your things and checkpoints stay in your vault.
 
-## Storage and limitations
+Install and enable Meanwhile on each device where you want to use it. You can use Obsidian Sync or another compatible service to sync your vault.
 
-Each thing’s metadata is stored in a Markdown note named for the thing, such as `Inscription.md`. Checkpoints are Markdown notes in a `Checkpoints/` folder, named for the thing and local date (for example, `Photography - 2026-11-15.md`, with a number for additional checkpoints that day); and custom colors and state are stored in the thing’s frontmatter. New thing notes use `meanwhile_type`, `meanwhile_id`, `name`, `created`, and `state` properties; checkpoints use `meanwhile_type`, `meanwhile_id`, `meanwhile_thing`, and `created`. The plugin makes no network requests.
+## Your notes and files
 
-- Things are indexed inside the configured root folder. Folders outside it aren’t indexed automatically.
-- A thing cannot be added to a folder if a note with its name already exists there.
-- Keep checkpoint headings as `## Context`, `## Next step`, `## Open questions`, and `## References` for the plugin to read them.
-- Wiki links in References are clickable in the detail view. Other Markdown links remain available in the checkpoint note.
-- Mobile layouts are included, but the plugin has not yet been tested on an iOS or Android device.
+Your things and checkpoints are ordinary Markdown notes in your vault, so you can open and edit them in Obsidian. Meanwhile makes no network requests.
+
+By default, Meanwhile creates a folder for each thing inside `Things`. Each folder contains the thing’s note and a `Checkpoints` folder. For example, a checkpoint for Family history might be named `Family history - 2026-11-15.md`. Multiple checkpoints saved on the same day get different filenames.
+
+You can choose a different root folder in Meanwhile’s settings. Meanwhile finds things inside that folder and its subfolders; changing the setting doesn’t move your notes. You can use an existing folder for a thing as long as it doesn’t already contain a note with the same name.
+
+Meanwhile uses note properties to recognize your things and connect their checkpoints. If you edit a checkpoint note, keep its section headings—**Context**, **Next time**, **Open questions**, and **References**—so Meanwhile can read the contents. Optional sections can be omitted. Obsidian wiki links in References can be opened from the thing’s detail page; other Markdown links can be opened from the checkpoint note.
+
+Meanwhile includes mobile layouts and has been used on iOS; Android has not yet been tested.
 
 ## License
 
-Meanwhile is licensed under the [MIT License](LICENSE). Interface icons use Obsidian's built-in Lucide icons.
+Meanwhile is licensed under the [MIT License](LICENSE).

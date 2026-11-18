@@ -210,3 +210,8 @@
  inset-inline-start:0;
  color:inherit;
 }
+
+/* Leave space to scroll the focused checkpoint field above the mobile keyboard. */
+body.is-mobile .pc-checkpoint-form:focus-within {
+ padding-bottom: calc(var(--size-4-4, 16px) + 45vh);
+}
